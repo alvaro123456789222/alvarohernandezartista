@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Nombre del Artista] - Paisajes Atmosféricos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #fefefe;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
+        }
+
+        nav {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: inline-flex;
+            gap: 60px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c2c2c;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: #999;
+        }
+
+        .section {
+            display: none;
+            padding: 60px 0;
+            min-height: 60vh;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .obras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .obra-placeholder {
+            aspect-ratio: 4/3;
+            
+        }
+
+        .obra-placeholder:hover {
+            transform: translateY(-5px);
+        }
+
+        .obra-info {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .obra-titulo {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .obra-detalles {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .bio-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .bio-placeholder {
+            background: #f9f9f9;
+            padding: 40px;
+            border-left: 4px solid #ddd;
+            font-style: italic;
+            color: #666;
+            text-align: center;
+        }
+
+        .contacto-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contacto-info {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contacto-item {
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            background: #fafafa;
+        }
+
+        .contacto-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .contacto-placeholder {
+            color: #666;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 80px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .section h2 {
+                font-size: 1.6em;
+            }
+
+            .obras-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ALVARO HERNANDEZ</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#" onclick="showSection('obras')" class="nav-link active">Obras 2025</a></li>
+                <li><a href="#" onclick="showSection('biografia')" class="nav-link">Biografía</a></li>
+                <li><a href="#" onclick="showSection('contacto')" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="obras" class="section active">
+            <h2>Obras 2025</h2>
+            <div class="obras-grid">
+                <div class="obra-item">
+                    <div class="obra-placeholder">
+                          <img src="obra 1.JPEG" alt="Descripción de la obra" style="max-width:100%; max-height:100%; object-fit:contain;">
+                    </div>
+                    <div class="obra-info">
+                        <div class="obra-titulo">[Poco antes nada y poco después humo]</div>
+                        <div class="obra-detalles">[Carbón sobre lino, 40 x 100 cm, 2025]</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="biografia" class="section">
+            <h2>Biografía</h2>
+            <div class="bio-content">
+                <div class="bio-placeholder">
+                    [Soy estudiante de Bellas Artes, especializado en la modalidad de Pintura, con un expediente académico destacado que incluye varias Matrículas de Honor. Mi trabajo se desarrolla desde una investigación constante en torno a la imagen, el tiempo y la percepción, utilizando medios tradicionales y contemporáneos con un enfoque conceptual y crítico. A través de la pintura, exploro lo cotidiano como metáfora de lo íntimo y lo colectivo. La obra siempre se encontrará en un estado ambiguo, buscándo así un acabado relacionado con el término "in progress", construyendo una práctica artística que se apoya tanto en el pensamiento visual como en la reflexión filosófica y social. Esta web reúne una selección representativa de mi producción reciente, concebida como un espacio abierto al diálogo, la mirada lenta y la interpretación personal.
+]
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <div class="contacto-content">
+                <p>Para exposiciones y encargos</p>
+                <div class="contacto-info">
+                    <div class="contacto-item">
+                        <h3>Email</h3>
+                        <div class="alvarohernandezartista@gmail.com">[alvarohernandezartista@gmail.com]</div>
+              
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [ALVARO HERNANDEZ]. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSection(sectionName) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionName).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
